@@ -1,0 +1,44 @@
+{
+  "bodywork-before": {
+    "width": 960,
+    "height": 720,
+    "widths": [
+      640,
+      960
+    ]
+  },
+  "exterior-front": {
+    "width": 1360,
+    "height": 730,
+    "widths": [
+      640,
+      1024,
+      1360
+    ]
+  },
+  "exterior-wide": {
+    "width": 1360,
+    "height": 643,
+    "widths": [
+      640,
+      1024,
+      1360
+    ]
+  },
+  "paint-booth": {
+    "width": 765,
+    "height": 956,
+    "widths": [
+      640,
+      765
+    ]
+  },
+  "workshop": {
+    "width": 765,
+    "height": 1020,
+    "widths": [
+      640,
+      765
+    ]
+  }
+}

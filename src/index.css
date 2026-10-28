@@ -1,0 +1,189 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+  Design tokens. Colours are RGB channels so Tailwind can apply opacity (see tailwind.config.js).
+  Taken from the shop signage: charcoal boards, signal-green mark, white lettering.
+*/
+:root {
+  --ink: 11 13 15; /* #0B0D0F page background, dark sections */
+  --graphite: 20 24 27; /* #14181B surfaces and cards on dark */
+  --steel: 30 36 40; /* #1E2428 raised panels, inputs on dark */
+  --line: 42 49 54; /* #2A3136 borders on dark */
+  --mute: 154 164 171; /* #9AA4AB secondary text on dark */
+  --paper: 244 246 247; /* #F4F6F7 light section background */
+  --white: 255 255 255; /* #FFFFFF */
+  --text: 14 18 21; /* #0E1215 body text on light */
+  --text-mute: 74 85 92; /* #4A555C secondary text on light (7.06:1 on paper) */
+  --line-light: 220 225 228; /* #DCE1E4 borders on light */
+  --brand: 34 178 76; /* #22B24C signal green: CTAs, highlights, focus rings */
+  --brand-dark: 23 138 57; /* #178A39 hover / pressed accents (borders, underlines) */
+  --brand-soft: 230 246 234; /* #E6F6EA tinted backgrounds on light */
+  --brand-ink: 17 112 45; /* #11702D green TEXT on light (5.73:1 on paper) */
+  --amber: 245 180 0; /* #F5B400 sparing accent: MOT badges, "due soon" */
+  --danger: 229 72 77; /* #E5484D error icons and borders */
+  --danger-ink: 180 35 42; /* #B4232A error TEXT on light (6.53:1 on white) */
+  --whatsapp: 37 211 102; /* #25D366 only rendered when business.whatsapp is set */
+}
+
+/* Metric-matched fallbacks so text does not jump when the web fonts arrive */
+@font-face {
+  font-family: 'Inter Fallback';
+  src: local('Arial'), local('Helvetica'), local('Roboto');
+  size-adjust: 107.1%;
+  ascent-override: 90.5%;
+  descent-override: 22.5%;
+  line-gap-override: 0%;
+}
+@font-face {
+  font-family: 'Barlow Condensed Fallback';
+  src: local('Arial Narrow'), local('Roboto Condensed'), local('Arial');
+  size-adjust: 92%;
+  ascent-override: 108%;
+  descent-override: 26%;
+  line-gap-override: 0%;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    @apply bg-paper font-body text-base leading-relaxed text-text antialiased;
+    overflow-x: clip;
+  }
+  h1, h2, h3, h4 {
+    @apply font-display font-bold text-text;
+  }
+  /* Double ring: green outside, ink inside, so focus is visible on light and dark sections */
+  :focus-visible {
+    outline: 2px solid rgb(var(--brand));
+    outline-offset: 2px;
+    box-shadow: 0 0 0 2px rgb(var(--ink));
+  }
+  [tabindex='-1']:focus {
+    outline: none;
+    box-shadow: none;
+  }
+  ::selection {
+    background: rgb(var(--brand));
+    color: rgb(var(--ink));
+  }
+}
+
+@layer components {
+  .container-x {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Section eyebrow with the thin green "racing line" underneath */
+  .eyebrow {
+    @apply relative inline-block pb-3 font-body text-xs font-semibold uppercase tracking-[0.2em] text-brand-ink;
+  }
+  .eyebrow::after {
+    content: '';
+    @apply absolute bottom-0 left-0 h-[2px] w-12 bg-brand;
+  }
+  .dark .eyebrow,
+  .eyebrow-on-dark {
+    @apply text-brand;
+  }
+  .eyebrow-center::after {
+    @apply left-1/2 -translate-x-1/2;
+  }
+
+  .title-xl {
+    @apply font-display text-h2 font-bold uppercase;
+  }
+
+  .btn {
+    @apply inline-flex min-h-[48px] items-center justify-center gap-2 rounded-sm px-6 py-3 text-[15px] font-semibold tracking-wide transition duration-200 ease-out;
+  }
+  /* Text on green is ink, never white: white on #22B24C is under 3:1 */
+  .btn-primary {
+    @apply btn bg-brand text-ink hover:-translate-y-0.5 hover:shadow-glow active:translate-y-0 active:ring-2 active:ring-brand-dark;
+  }
+  .btn-ghost-dark {
+    @apply btn border border-white/30 text-white hover:border-brand hover:text-brand;
+  }
+  .btn-outline {
+    @apply btn border border-text/25 text-text hover:border-brand-dark hover:text-brand-ink;
+  }
+  .btn-amber {
+    @apply btn bg-amber text-ink hover:-translate-y-0.5 hover:shadow-card;
+  }
+  .btn-whatsapp {
+    @apply btn bg-whatsapp text-ink hover:-translate-y-0.5;
+  }
+
+  .link-arrow {
+    @apply inline-flex items-center gap-1.5 font-semibold text-brand-ink underline-offset-4 transition-colors duration-200 hover:underline;
+  }
+  .dark .link-arrow {
+    @apply text-brand;
+  }
+
+  .input {
+    @apply min-h-[48px] w-full rounded-sm border border-line-light bg-white px-4 py-3 text-text transition duration-200 placeholder:text-text-mute/80 hover:border-text-mute focus:border-brand-dark;
+  }
+  .input[aria-invalid='true'] {
+    @apply border-danger;
+  }
+
+  .card {
+    @apply rounded border border-line-light bg-white;
+  }
+  .panel-dark {
+    @apply rounded border border-line bg-graphite;
+  }
+
+  .chip {
+    @apply inline-flex items-center gap-2 rounded-sm border border-white/15 bg-white/5 px-3 py-1.5 text-[13px] font-medium text-white backdrop-blur-sm;
+  }
+
+  /* Dark section helper: sets text colours for everything inside */
+  .dark {
+    @apply bg-ink text-mute;
+  }
+  .dark h1, .dark h2, .dark h3, .dark h4 {
+    @apply text-white;
+  }
+
+  /* Long-form text: blog posts and legal pages */
+  .prose-body {
+    @apply text-[17px] leading-[1.75];
+  }
+  .prose-body > * + * {
+    @apply mt-5;
+  }
+  .prose-body h2 {
+    @apply mt-12 font-display text-3xl uppercase;
+  }
+  .prose-body h3 {
+    @apply mt-8 font-display text-2xl;
+  }
+  .prose-body ul,
+  .prose-body ol {
+    @apply space-y-2 pl-6;
+  }
+  .prose-body ul {
+    @apply list-disc marker:text-brand-dark;
+  }
+  .prose-body ol {
+    @apply list-decimal marker:font-semibold marker:text-text;
+  }
+  .prose-body a {
+    @apply font-medium text-brand-ink underline underline-offset-4;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
