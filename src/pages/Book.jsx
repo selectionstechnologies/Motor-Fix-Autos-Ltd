@@ -10,7 +10,7 @@ export default function Book() {
   return (
     <>
       <Seo title="Book a Service or MOT in Manchester" path="/book" description="Send a booking request for servicing, MOT, diagnostics, tyres or bodywork at Motor Fix Autos, Manchester M13. We confirm every booking personally." />
-      <PageHero eyebrow="Book online" title="Book your car in" intro="Fill in the form and we will contact you to confirm a date and time. Prefer to talk? Call the workshop." />
+      <PageHero eyebrow="Book online" title="Book your car in" intro="Fill in the form and we will contact you to confirm a date and time. Prefer to talk? Call the workshop." image="exterior-front" imagePosition="55% 45%" />
       <Section>
         <div className="container-x grid gap-10 lg:grid-cols-12">
           <div className="lg:col-span-8"><BookingForm /></div>

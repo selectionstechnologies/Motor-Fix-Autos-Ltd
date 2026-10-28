@@ -27,7 +27,7 @@ export default function Logo({ className = 'h-10 w-auto', title = 'Motor Fix Aut
         MOTOR FIX
       </text>
       <text
-        x="53" y="40" textLength="120" lengthAdjust="spacingAndGlyphs"
+        x="53" y="40" textLength="120" lengthAdjust="spacing"
         fill="currentColor" fillOpacity="0.72" fontFamily="Inter, Arial, sans-serif" fontWeight="600" fontSize="10"
       >
         AUTOS LTD

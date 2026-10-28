@@ -21,19 +21,21 @@ export default function Bodywork() {
       />
       <PageHero
         eyebrow="Bodywork & paint"
+        image="bodywork-before"
+        imagePosition="30% 55%"
         title="Body shop & spray booth"
         intro="Dents, scratches, panels, paint and alloy wheels, repaired in our own body shop. Estimates are free."
       >
         <Picture name="paint-booth" alt="A painter in a protective suit spraying a grey car in the Motor Fix Autos spray booth"
-          priority sizes="(min-width: 1024px) 30vw, 100vw" position="40% 55%"
-          imgClassName="aspect-[4/5] w-full max-w-sm rounded border border-line object-cover lg:ml-auto" />
+          sizes="30vw" position="40% 55%"
+          className="hidden lg:block" imgClassName="aspect-[4/5] w-full max-w-sm rounded border border-line object-cover lg:ml-auto" />
       </PageHero>
 
       <Section>
         <div className="container-x">
           <SectionHeading eyebrow="Services" title="What our body shop does" />
           <motion.ul variants={stagger} className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {servicesInGroup('bodywork').map((s) => <ServiceCard key={s.slug} service={s} />)}
+            {servicesInGroup('bodywork').map((s, i) => <ServiceCard key={s.slug} service={s} index={i} />)}
           </motion.ul>
         </div>
       </Section>

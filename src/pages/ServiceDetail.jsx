@@ -2,7 +2,8 @@ import { Link, useParams } from 'react-router-dom';
 import { Check, CalendarCheck, ArrowRight, Phone } from 'lucide-react';
 import Seo, { breadcrumbJsonLd } from '../components/layout/Seo';
 import PageHero from '../components/ui/PageHero';
-import Section from '../components/ui/Section';
+import { motion } from 'framer-motion';
+import Section, { reveal } from '../components/ui/Section';
 import Accordion from '../components/ui/Accordion';
 import Picture from '../components/ui/Picture';
 import CtaBand from '../components/ui/CtaBand';
@@ -30,7 +31,8 @@ export default function ServiceDetail() {
         description={`${s.short} ${isBodywork ? 'Free estimates' : 'Call for a quote'} at Motor Fix Autos, Ardwick Green, Manchester M13.`}
         jsonLd={breadcrumbJsonLd([{ name: 'Services', path: '/services' }, { name: s.title, path }])}
       />
-      <PageHero eyebrow={group.title} title={s.title} intro={s.short} crumbs={[{ label: 'Services', to: '/services' }]}>
+      <PageHero eyebrow={group.title} title={s.title} intro={s.short} crumbs={[{ label: 'Services', to: '/services' }]}
+        image={s.image ?? (isBodywork ? 'paint-booth' : 'workshop')} imagePosition={isBodywork ? '40% 45%' : '50% 30%'}>
         <span className="hidden h-24 w-24 items-center justify-center rounded border border-line bg-graphite text-brand lg:ml-auto lg:flex">
           <Icon className="h-11 w-11" aria-hidden="true" />
         </span>
@@ -52,11 +54,11 @@ export default function ServiceDetail() {
             <div>
               <h2 className="title-xl">Signs you need it</h2>
               <ul className="mt-6 grid gap-3 sm:grid-cols-2">
-                {s.signs.map((c) => (
-                  <li key={c} className="flex items-start gap-3 rounded border border-line-light bg-white p-4">
+                {s.signs.map((c, i) => (
+                  <motion.li key={c} {...reveal(i % 2)} className="flex items-start gap-3 rounded border border-line-light bg-white p-4">
                     <Check className="mt-0.5 h-5 w-5 shrink-0 text-brand-ink" aria-hidden="true" />
                     {c}
-                  </li>
+                  </motion.li>
                 ))}
               </ul>
             </div>
@@ -65,11 +67,11 @@ export default function ServiceDetail() {
               <h2 className="title-xl">What we do</h2>
               <ol className="mt-6 grid gap-4 sm:grid-cols-2">
                 {s.whatWeDo.map((step, i) => (
-                  <li key={step.title} className="relative overflow-hidden rounded border border-line-light bg-white p-5">
+                  <motion.li key={step.title} {...reveal(i % 2)} className="relative overflow-hidden rounded border border-line-light bg-white p-5">
                     <span className="font-display text-sm font-bold uppercase tracking-widest text-brand-ink">Step {String(i + 1).padStart(2, '0')}</span>
                     <p className="mt-1 font-display text-xl font-bold uppercase text-text">{step.title}</p>
                     <p className="mt-1 text-[15px] text-text-mute">{step.text}</p>
-                  </li>
+                  </motion.li>
                 ))}
               </ol>
             </div>

@@ -20,7 +20,7 @@ export default function Hero() {
         priority
         sizes="100vw"
         position="55% 45%"
-        className="absolute inset-0 -z-20"
+        className="absolute inset-0 -z-20 block animate-kenburns"
         imgClassName="h-full w-full object-cover"
       />
       <div className="absolute inset-0 -z-10 bg-gradient-to-r from-ink via-ink/85 to-ink/30" aria-hidden="true" />

@@ -63,9 +63,14 @@ export default {
           from: { opacity: '0', transform: 'translateY(16px)' },
           to: { opacity: '1', transform: 'none' },
         },
+        kenburns: {
+          from: { transform: 'scale(1.12)' },
+          to: { transform: 'scale(1)' },
+        },
       },
       animation: {
         rise: 'rise 500ms cubic-bezier(0.22, 1, 0.36, 1) both',
+        kenburns: 'kenburns 9s cubic-bezier(0.22, 1, 0.36, 1) both',
       },
     },
   },

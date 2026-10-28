@@ -3,19 +3,19 @@ import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import Seo from '../components/layout/Seo';
 import PageHero from '../components/ui/PageHero';
-import Section, { fadeUp, stagger } from '../components/ui/Section';
+import Section, { reveal, stagger } from '../components/ui/Section';
 import { posts, formatDate } from '../data/blog';
 
 export default function Blog() {
   return (
     <>
       <Seo title="Car-Care Tips from a Manchester Garage" path="/blog" description="Practical car-care advice from Motor Fix Autos in Manchester: MOT preparation, DPF warning lights and air con smells." />
-      <PageHero eyebrow="Car-care tips" title="Advice from the workshop" intro="Short, practical reads on the questions customers ask us most." />
+      <PageHero eyebrow="Car-care tips" title="Advice from the workshop" intro="Short, practical reads on the questions customers ask us most." image="workshop" imagePosition="50% 30%" />
       <Section>
         <div className="container-x">
           <motion.ul variants={stagger} className="grid gap-6 md:grid-cols-3">
-            {posts.map((p) => (
-              <motion.li key={p.slug} variants={fadeUp}>
+            {posts.map((p, i) => (
+              <motion.li key={p.slug} {...reveal(i)}>
                 <Link to={`/blog/${p.slug}`} className="group card relative flex h-full flex-col overflow-hidden p-7 transition hover:-translate-y-1 hover:shadow-card">
                   <span className="text-xs font-semibold uppercase tracking-[0.14em] text-brand-ink">{p.category}</span>
                   <h2 className="mt-3 font-display text-3xl font-bold uppercase leading-tight">{p.title}</h2>

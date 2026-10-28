@@ -28,7 +28,7 @@ export default function BlogPost() {
         description={post.excerpt}
         jsonLd={breadcrumbJsonLd([{ name: 'Car-care tips', path: '/blog' }, { name: post.title, path }])}
       />
-      <PageHero eyebrow={`${post.category} · ${post.readTime}`} title={post.title} intro={post.excerpt} crumbs={[{ label: 'Car-care tips', to: '/blog' }]} current="Article" />
+      <PageHero eyebrow={`${post.category} · ${post.readTime}`} title={post.title} intro={post.excerpt} crumbs={[{ label: 'Car-care tips', to: '/blog' }]} current="Article" image={post.heroImage ?? 'workshop'} imagePosition="50% 35%" />
       <Section tone="white">
         <article className="container-x max-w-3xl">
           <p className="text-sm text-text-mute">Published <time dateTime={post.date}>{formatDate(post.date)}</time></p>

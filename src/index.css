@@ -80,7 +80,7 @@
 
   /* Section eyebrow with the thin green "racing line" underneath */
   .eyebrow {
-    @apply relative inline-block pb-3 font-body text-xs font-semibold uppercase tracking-[0.2em] text-brand-ink;
+    @apply relative inline-block pb-3 font-body text-xs font-semibold uppercase tracking-[0.14em] text-brand-ink sm:tracking-[0.2em];
   }
   .eyebrow::after {
     content: '';
@@ -99,7 +99,7 @@
   }
 
   .btn {
-    @apply inline-flex min-h-[48px] items-center justify-center gap-2 rounded-sm px-6 py-3 text-[15px] font-semibold tracking-wide transition duration-200 ease-out;
+    @apply inline-flex min-h-[48px] items-center text-center justify-center gap-2 rounded-sm px-6 py-3 text-[15px] font-semibold tracking-wide transition duration-200 ease-out;
   }
   /* Text on green is ink, never white: white on #22B24C is under 3:1 */
   .btn-primary {

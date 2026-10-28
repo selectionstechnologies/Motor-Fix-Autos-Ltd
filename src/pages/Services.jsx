@@ -39,7 +39,7 @@ export default function Services() {
               <p className="mt-3 text-lg text-text-mute">{g.text}</p>
             </div>
             <motion.ul variants={stagger} className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-              {servicesInGroup(g.id).map((s) => <ServiceCard key={s.slug} service={s} />)}
+              {servicesInGroup(g.id).map((s, i) => <ServiceCard key={s.slug} service={s} index={i} />)}
             </motion.ul>
           </div>
         </Section>

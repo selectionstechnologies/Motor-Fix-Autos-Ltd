@@ -19,7 +19,7 @@ export default function Faq() {
   return (
     <>
       <Seo title="MOT & Garage FAQs | Manchester" path="/faq" description="Answers about MOTs, booking, waiting times, collection, insurance repairs and payment at Motor Fix Autos, Manchester M13." jsonLd={faqJsonLd} />
-      <PageHero eyebrow="FAQ" title="Common questions" intro="Can't find your answer? Ask the chat assistant or call the workshop." />
+      <PageHero eyebrow="FAQ" title="Common questions" intro="Can't find your answer? Ask the chat assistant or call the workshop." image="exterior-wide" imagePosition="50% 55%" />
       <Section>
         <div className="container-x grid gap-12 lg:grid-cols-12">
           <nav aria-label="FAQ categories" className="hidden lg:col-span-3 lg:block">

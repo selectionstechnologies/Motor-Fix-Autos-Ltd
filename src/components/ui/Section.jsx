@@ -5,6 +5,24 @@ export const fadeUp = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } },
 };
 
+// Each card animates in on its own as it scrolls into view, staggered across a row.
+// Usage: <motion.li {...reveal(i)}>
+export const revealItem = {
+  hidden: { opacity: 0, y: 40, scale: 0.96 },
+  visible: (i = 0) => ({
+    opacity: 1, y: 0, scale: 1,
+    transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1], delay: (i % 4) * 0.09 },
+  }),
+};
+
+export const reveal = (i = 0) => ({
+  variants: revealItem,
+  initial: 'hidden',
+  whileInView: 'visible',
+  viewport: { once: true, amount: 0.2 },
+  custom: i,
+});
+
 export const stagger = {
   hidden: {},
   visible: { transition: { staggerChildren: 0.06 } },
@@ -23,7 +41,7 @@ export default function Section({ id, tone = 'light', className = '', children, 
   return (
     <motion.section
       id={id}
-      className={`py-16 sm:py-20 lg:py-24 ${tones[tone]} ${className}`}
+      className={`py-12 sm:py-20 lg:py-24 ${tones[tone]} ${className}`}
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.08 }}

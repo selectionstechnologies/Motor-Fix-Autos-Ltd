@@ -8,6 +8,7 @@ export const posts = [
     readTime: '5 min read',
     category: 'MOT',
     relatedService: '/mot',
+    heroImage: 'exterior-front',
     excerpt: 'Many MOT failures come down to simple things you can check on your drive in ten minutes. Here is what to look at before the test.',
     body: [
       { type: 'p', text: 'A large share of MOT failures are for small, cheap items: a blown bulb, a worn wiper blade, an empty washer bottle. You can check most of them yourself in ten minutes, and fixing them before the test saves you a failure on your record and a second trip.' },

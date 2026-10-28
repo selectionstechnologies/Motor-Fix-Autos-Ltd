@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { ArrowRight, Check } from 'lucide-react';
 import Seo from '../components/layout/Seo';
 import Hero from '../components/home/Hero';
-import Section, { SectionHeading, fadeUp, stagger } from '../components/ui/Section';
+import Section, { SectionHeading, reveal, stagger } from '../components/ui/Section';
 import TrustStrip from '../components/ui/TrustStrip';
 import BrandBadges from '../components/ui/BrandBadges';
 import MotBand from '../components/ui/MotBand';
@@ -36,7 +36,7 @@ export default function Home() {
             <Link to="/services" className="link-arrow shrink-0">All services <ArrowRight className="h-4 w-4" aria-hidden="true" /></Link>
           </SectionHeading>
           <motion.ul variants={stagger} className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {homeServices.map((s) => <ServiceCard key={s.slug} service={s} />)}
+            {homeServices.map((s, i) => <ServiceCard key={s.slug} service={s} index={i} />)}
           </motion.ul>
         </div>
       </Section>
@@ -56,8 +56,8 @@ export default function Home() {
         <div className="container-x">
           <SectionHeading eyebrow="Why choose us" title="Straight answers, careful work" />
           <motion.ul variants={stagger} className="grid gap-x-10 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
-            {features.map(({ icon: Icon, title, text }) => (
-              <motion.li key={title} variants={fadeUp} className="border-t-2 border-ink pt-6">
+            {features.map(({ icon: Icon, title, text }, i) => (
+              <motion.li key={title} {...reveal(i)} className="border-t-2 border-ink pt-6">
                 <Icon className="h-7 w-7 text-brand-ink" aria-hidden="true" />
                 <h3 className="mt-4 font-display text-h3 font-bold uppercase">{title}</h3>
                 <p className="mt-2 text-[15px] text-text-mute">{text}</p>
@@ -78,11 +78,11 @@ export default function Home() {
             <p className="eyebrow mb-5">Inside our workshop</p>
             <h2 className="title-xl">Everything under one roof</h2>
             <ul className="mt-8 grid gap-4 sm:grid-cols-2">
-              {workshop.map((w) => (
-                <li key={w.title} className="panel-dark p-5">
+              {workshop.map((w, i) => (
+                <motion.li key={w.title} {...reveal(i % 2)} className="panel-dark p-5">
                   <p className="flex items-center gap-2 font-semibold text-white"><Check className="h-5 w-5 text-brand" aria-hidden="true" />{w.title}</p>
                   <p className="mt-1 text-[15px]">{w.text}</p>
-                </li>
+                </motion.li>
               ))}
             </ul>
             <Link to="/about" className="link-arrow mt-8">About the garage <ArrowRight className="h-4 w-4" aria-hidden="true" /></Link>
@@ -124,8 +124,8 @@ export default function Home() {
             <Link to="/blog" className="link-arrow shrink-0">All articles <ArrowRight className="h-4 w-4" aria-hidden="true" /></Link>
           </SectionHeading>
           <motion.ul variants={stagger} className="grid divide-y divide-line-light border-y border-line-light">
-            {posts.map((p) => (
-              <motion.li key={p.slug} variants={fadeUp}>
+            {posts.map((p, i) => (
+              <motion.li key={p.slug} {...reveal(i)}>
                 <Link to={`/blog/${p.slug}`} className="group grid gap-2 py-6 sm:grid-cols-12 sm:items-baseline sm:gap-6">
                   <span className="text-sm text-text-mute sm:col-span-3">{formatDate(p.date)} · {p.category}</span>
                   <span className="font-display text-2xl font-bold uppercase text-text transition-colors group-hover:text-brand-ink sm:col-span-8">{p.title}</span>

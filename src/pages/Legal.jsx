@@ -8,7 +8,7 @@ function LegalPage({ title, seoTitle, path, description, doc }) {
   return (
     <>
       <Seo title={seoTitle} path={path} description={description} />
-      <PageHero eyebrow="Legal" title={title} intro={`Last updated ${formatDate(doc.updated)}.`} />
+      <PageHero eyebrow="Legal" title={title} intro={`Last updated ${formatDate(doc.updated)}.`} image="exterior-wide" imagePosition="50% 55%" />
       <Section tone="white">
         <div className="container-x prose-body max-w-3xl">
           <p className="rounded border border-amber bg-paper p-4 text-[15px] font-semibold">{legalNotice}</p>

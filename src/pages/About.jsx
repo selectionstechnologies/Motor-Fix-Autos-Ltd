@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { Check } from 'lucide-react';
 import Seo from '../components/layout/Seo';
 import PageHero from '../components/ui/PageHero';
-import Section, { SectionHeading, fadeUp, stagger } from '../components/ui/Section';
+import Section, { SectionHeading, reveal, stagger } from '../components/ui/Section';
 import CtaBand from '../components/ui/CtaBand';
 import Picture from '../components/ui/Picture';
 import BrandBadges from '../components/ui/BrandBadges';
@@ -71,8 +71,8 @@ export default function About() {
         <div className="container-x">
           <SectionHeading eyebrow="Why choose us" title="How we work" />
           <motion.ul variants={stagger} className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {features.map(({ icon: Icon, title, text }) => (
-              <motion.li key={title} variants={fadeUp} className="card p-6">
+            {features.map(({ icon: Icon, title, text }, i) => (
+              <motion.li key={title} {...reveal(i)} className="card p-6">
                 <Icon className="h-7 w-7 text-brand-ink" aria-hidden="true" />
                 <h3 className="mt-4 font-display text-h3 font-bold uppercase">{title}</h3>
                 <p className="mt-2 text-[15px] text-text-mute">{text}</p>

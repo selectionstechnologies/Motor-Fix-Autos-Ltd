@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { CalendarCheck, Check, ExternalLink, Info, Phone } from 'lucide-react';
 import Seo from '../components/layout/Seo';
 import PageHero from '../components/ui/PageHero';
-import Section, { SectionHeading, fadeUp, stagger } from '../components/ui/Section';
+import Section, { SectionHeading, reveal, stagger } from '../components/ui/Section';
 import CtaBand from '../components/ui/CtaBand';
 import { motChecks, motNotChecked, motBring, motSteps, motFacts, motCheckLink } from '../data/mot';
 import { business } from '../data/business';
@@ -18,10 +18,12 @@ export default function Mot() {
       />
       <PageHero
         eyebrow="MOT test centre"
+        image="exterior-front"
+        imagePosition="55% 45%"
         title="Car & van MOTs"
         intro="Tested in our own MOT bay. If anything fails, we show you why and can quote for the repair in the same workshop."
       >
-        <div className="panel-dark p-6">
+        <div className="panel-dark hidden p-6 sm:block">
           <span className="inline-block rounded-sm bg-amber px-2.5 py-1 text-xs font-bold uppercase tracking-wider text-ink">Book early</span>
           <p className="mt-3 text-white">Test up to a month (minus a day) early and keep your renewal date.</p>
           <div className="mt-5 grid gap-3">
@@ -35,8 +37,8 @@ export default function Mot() {
         <div className="container-x">
           <SectionHeading eyebrow="The test" title="What is checked" text="The MOT follows the DVSA standard. These are the main areas the tester inspects." />
           <motion.ul variants={stagger} className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {motChecks.map((c) => (
-              <motion.li key={c.title} variants={fadeUp} className="card flex gap-4 p-5">
+            {motChecks.map((c, i) => (
+              <motion.li key={c.title} {...reveal(i % 3)} className="card flex gap-4 p-5">
                 <Check className="mt-1 h-5 w-5 shrink-0 text-brand-ink" aria-hidden="true" />
                 <div>
                   <h3 className="font-display text-xl font-bold uppercase">{c.title}</h3>
@@ -69,13 +71,13 @@ export default function Mot() {
             <h2 className="title-xl">On the day</h2>
             <ol className="mt-6 space-y-4">
               {motSteps.map((s, i) => (
-                <li key={s.title} className="panel-dark flex gap-4 p-5">
+                <motion.li key={s.title} {...reveal(0)} className="panel-dark flex gap-4 p-5">
                   <span className="font-display text-3xl font-bold text-brand">{String(i + 1).padStart(2, '0')}</span>
                   <div>
                     <p className="font-display text-xl font-bold uppercase text-white">{s.title}</p>
                     <p className="text-[15px]">{s.text}</p>
                   </div>
-                </li>
+                </motion.li>
               ))}
             </ol>
           </div>

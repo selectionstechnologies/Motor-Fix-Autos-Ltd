@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Star, ExternalLink } from 'lucide-react';
-import { fadeUp, stagger } from '../ui/Section';
+import { reveal, stagger } from '../ui/Section';
 import { reviews } from '../../data/reviews';
 import { business } from '../../data/business';
 import { formatDate } from '../../data/blog';
@@ -32,8 +32,8 @@ export default function ReviewsList({ limit }) {
 
   return (
     <motion.ul variants={stagger} className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-      {list.map((r) => (
-        <motion.li key={`${r.author}-${r.date}`} variants={fadeUp}>
+      {list.map((r, i) => (
+        <motion.li key={`${r.author}-${r.date}`} {...reveal(i % 3)}>
           <figure className="card flex h-full flex-col p-6 sm:p-7">
             <div className="flex gap-0.5" role="img" aria-label={`Rated ${r.rating} out of 5`}>
               {Array.from({ length: 5 }).map((_, i) => (
