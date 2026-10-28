@@ -104,7 +104,7 @@ export default function Navbar() {
                 ))}
                 <li className="mt-3 grid gap-2 sm:grid-cols-2">
                   <Link to="/book" className="btn-primary w-full"><CalendarCheck className="h-5 w-5" aria-hidden="true" />Book a service</Link>
-                  <a href={business.phoneHref} className="btn-ghost-dark w-full"><Phone className="h-5 w-5" aria-hidden="true" />Call {business.phone}</a>
+                  <a href={business.phoneHref} className="btn-ghost-dark w-full"><Phone className="h-5 w-5" aria-hidden="true" />Call <span className="whitespace-nowrap">{business.phone}</span></a>
                 </li>
               </ul>
             </motion.div>

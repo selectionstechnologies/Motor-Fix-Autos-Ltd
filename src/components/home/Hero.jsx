@@ -45,7 +45,7 @@ export default function Hero() {
             </Link>
             <a href={business.phoneHref} className="btn-ghost-dark">
               <Phone className="h-5 w-5" aria-hidden="true" />
-              Call {business.phone}
+              Call <span className="whitespace-nowrap">{business.phone}</span>
             </a>
           </div>
 

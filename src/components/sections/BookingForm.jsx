@@ -127,7 +127,7 @@ export default function BookingForm() {
           <pre className="mt-4 max-h-60 overflow-auto whitespace-pre-wrap rounded-sm bg-white p-4 font-body text-sm text-text">{result.body}</pre>
         </div>
         <div className="mt-6 flex flex-wrap gap-3">
-          <a href={business.phoneHref} className="btn-primary"><Phone className="h-5 w-5" aria-hidden="true" />Call {business.phone}</a>
+          <a href={business.phoneHref} className="btn-primary"><Phone className="h-5 w-5" aria-hidden="true" />Call <span className="whitespace-nowrap">{business.phone}</span></a>
           <button type="button" className="btn-outline" onClick={() => { setResult(null); setValues(emptyBooking); setTouched({}); setErrs({}); }}>
             Start a new request
           </button>
