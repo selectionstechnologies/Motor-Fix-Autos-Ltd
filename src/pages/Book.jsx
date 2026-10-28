@@ -19,7 +19,7 @@ export default function Book() {
               <Phone className="h-7 w-7 shrink-0 text-brand" aria-hidden="true" />
               <span>
                 <span className="block text-sm">Prefer to call?</span>
-                <span className="font-display text-2xl font-bold text-white">{business.phone}</span>
+                <span className="font-display text-2xl font-bold text-white tracking-tight">{business.phone}</span>
               </span>
             </a>
             <a href={business.mobileHref} className="card flex items-center gap-4 p-5 transition hover:border-brand-dark">
@@ -27,7 +27,7 @@ export default function Book() {
               <span><span className="block text-sm text-text-mute">Mobile</span><span className="font-semibold">{business.mobile}</span></span>
             </a>
             <div>
-              <h2 className="mb-3 font-display text-2xl font-bold uppercase">Opening hours</h2>
+              <h2 className="mb-3 font-display text-2xl font-bold tracking-tight">Opening hours</h2>
               <HoursTable compact />
             </div>
           </aside>

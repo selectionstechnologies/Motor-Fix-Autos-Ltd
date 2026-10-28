@@ -111,7 +111,7 @@ export default function BookingForm() {
     return (
       <div className="card p-6 sm:p-8" role="status" aria-live="polite">
         <CheckCircle2 className="h-10 w-10 text-brand-ink" aria-hidden="true" />
-        <h2 className="mt-4 font-display text-3xl font-bold uppercase">Nearly done</h2>
+        <h2 className="mt-4 font-display text-3xl font-bold tracking-tight">Nearly done</h2>
         <p className="mt-3 text-lg">
           {viaWhatsApp
             ? 'WhatsApp should have opened with your booking details. Press send there to get them to us.'
@@ -155,7 +155,7 @@ export default function BookingForm() {
 
       <Field id="bk-reg" label="Registration" hint="As shown on your number plate" error={show('reg')}>
         <input id="bk-reg" name="reg" type="text" autoComplete="off" autoCapitalize="characters" spellCheck="false" maxLength={10}
-          className="input font-display text-xl font-bold uppercase tracking-[0.12em]" placeholder="AB12 CDE"
+          className="input font-display text-xl font-bold uppercase tracking-wide" placeholder="AB12 CDE"
           value={values.reg} onChange={onChange} onBlur={onBlur} {...describe('reg', true)} />
       </Field>
 

@@ -34,7 +34,7 @@ export default function Faq() {
           <div className="space-y-14 lg:col-span-9">
             {faqGroups.map((g) => (
               <div key={g.title} id={anchor(g.title)} className="scroll-mt-28">
-                <h2 className="mb-4 font-display text-3xl font-bold uppercase">{g.title}</h2>
+                <h2 className="mb-4 font-display text-3xl font-bold tracking-tight">{g.title}</h2>
                 <Accordion items={g.items} />
               </div>
             ))}

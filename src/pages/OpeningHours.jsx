@@ -19,11 +19,11 @@ export default function OpeningHours() {
           <div className="lg:col-span-7"><HoursTable /></div>
           <div className="space-y-6 lg:col-span-5">
             <div className="card p-6">
-              <h2 className="flex items-center gap-2 font-display text-2xl font-bold uppercase"><Info className="h-5 w-5 text-brand-ink" aria-hidden="true" />Good to know</h2>
+              <h2 className="flex items-center gap-2 font-display text-2xl font-bold tracking-tight"><Info className="h-5 w-5 text-brand-ink" aria-hidden="true" />Good to know</h2>
               <ul className="mt-4 space-y-3 text-[15px] text-text-mute">{hoursNotes.map((n) => <li key={n}>{n}</li>)}</ul>
             </div>
             <div className="card p-6">
-              <h2 className="font-display text-2xl font-bold uppercase">Find us</h2>
+              <h2 className="font-display text-2xl font-bold tracking-tight">Find us</h2>
               <p className="mt-2 text-text-mute">{business.addressLine}</p>
               <div className="mt-5 flex flex-wrap gap-3">
                 <a href={business.directionsLink} target="_blank" rel="noopener noreferrer" className="btn-primary"><Navigation className="h-5 w-5" aria-hidden="true" />Get directions</a>

@@ -128,7 +128,7 @@ export default function ChatBot() {
             <div className="flex items-center gap-3 border-b border-line bg-ink px-4 py-3 text-white">
               <span className="flex h-10 w-10 items-center justify-center rounded-sm bg-graphite"><LogoMark className="h-5 w-auto" /></span>
               <div className="flex-1 leading-tight">
-                <p className="font-display text-lg font-bold uppercase tracking-wide">Garage assistant</p>
+                <p className="font-display text-lg font-bold tracking-tight">Garage assistant</p>
                 <p className="text-xs text-mute">Instant answers, any time</p>
               </div>
               <button type="button" onClick={reset} className="rounded-md px-2 py-1 text-xs text-mute transition-colors hover:bg-steel hover:text-white">

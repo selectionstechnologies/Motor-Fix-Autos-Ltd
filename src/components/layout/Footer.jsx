@@ -8,7 +8,7 @@ import { serviceGroups, services, serviceHref } from '../../data/services';
 import { hasWhatsApp, waLink } from '../../lib/whatsapp';
 
 const footLink = 'transition-colors hover:text-white';
-const heading = 'font-display text-lg font-bold uppercase tracking-wider text-white';
+const heading = 'font-display text-base font-semibold tracking-tight text-white';
 
 export default function Footer() {
   const featured = serviceGroups.map((g) => services.find((s) => s.group === g.id));

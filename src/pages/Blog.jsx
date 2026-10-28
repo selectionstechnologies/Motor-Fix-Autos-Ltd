@@ -18,7 +18,7 @@ export default function Blog() {
               <motion.li key={p.slug} {...reveal(i)}>
                 <Link to={`/blog/${p.slug}`} className="group card relative flex h-full flex-col overflow-hidden p-7 transition hover:-translate-y-1 hover:shadow-card">
                   <span className="text-xs font-semibold uppercase tracking-[0.14em] text-brand-ink">{p.category}</span>
-                  <h2 className="mt-3 font-display text-3xl font-bold uppercase leading-tight">{p.title}</h2>
+                  <h2 className="mt-3 font-display text-3xl font-bold leading-tight tracking-tight">{p.title}</h2>
                   <p className="mt-3 flex-1 text-[15px] text-text-mute">{p.excerpt}</p>
                   <span className="mt-6 flex items-center justify-between border-t border-line-light pt-4 text-sm text-text-mute">
                     {formatDate(p.date)} · {p.readTime}

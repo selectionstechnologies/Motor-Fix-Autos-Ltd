@@ -29,18 +29,18 @@
 
 /* Metric-matched fallbacks so text does not jump when the web fonts arrive */
 @font-face {
-  font-family: 'Inter Fallback';
+  font-family: 'DM Sans Fallback';
   src: local('Arial'), local('Helvetica'), local('Roboto');
-  size-adjust: 107.1%;
-  ascent-override: 90.5%;
-  descent-override: 22.5%;
+  size-adjust: 100%;
+  ascent-override: 99%;
+  descent-override: 31%;
   line-gap-override: 0%;
 }
 @font-face {
-  font-family: 'Barlow Condensed Fallback';
-  src: local('Arial Narrow'), local('Roboto Condensed'), local('Arial');
-  size-adjust: 92%;
-  ascent-override: 108%;
+  font-family: 'Sora Fallback';
+  src: local('Arial'), local('Helvetica'), local('Roboto');
+  size-adjust: 112%;
+  ascent-override: 90%;
   descent-override: 26%;
   line-gap-override: 0%;
 }
@@ -108,11 +108,11 @@
   }
 
   .title-xl {
-    @apply font-display text-h2 font-bold uppercase;
+    @apply font-display text-h2 font-bold;
   }
 
   .btn {
-    @apply inline-flex min-h-[48px] max-w-full items-center text-center justify-center gap-2 rounded-sm px-6 py-3 text-[15px] font-semibold tracking-wide transition duration-200 ease-out;
+    @apply inline-flex min-h-[48px] max-w-full items-center text-center justify-center gap-2 rounded-sm px-6 py-3 text-[15px] font-semibold transition duration-200 ease-out;
   }
   /* Text on green is ink, never white: white on #22B24C is under 3:1 */
   .btn-primary {
@@ -172,10 +172,10 @@
     @apply mt-5;
   }
   .prose-body h2 {
-    @apply mt-12 font-display text-3xl uppercase;
+    @apply mt-12 font-display text-2xl tracking-tight sm:text-3xl;
   }
   .prose-body h3 {
-    @apply mt-8 font-display text-2xl;
+    @apply mt-8 font-display text-xl tracking-tight;
   }
   .prose-body ul,
   .prose-body ol {

@@ -41,7 +41,7 @@ export default function Mot() {
               <motion.li key={c.title} {...reveal(i % 3)} className="card flex gap-4 p-5">
                 <Check className="mt-1 h-5 w-5 shrink-0 text-brand-ink" aria-hidden="true" />
                 <div>
-                  <h3 className="font-display text-xl font-bold uppercase">{c.title}</h3>
+                  <h3 className="font-display text-xl font-bold tracking-tight">{c.title}</h3>
                   <p className="text-[15px] text-text-mute">{c.text}</p>
                 </div>
               </motion.li>
@@ -72,9 +72,9 @@ export default function Mot() {
             <ol className="mt-6 space-y-4">
               {motSteps.map((s, i) => (
                 <motion.li key={s.title} {...reveal(0)} className="panel-dark flex gap-4 p-5">
-                  <span className="font-display text-3xl font-bold text-brand">{String(i + 1).padStart(2, '0')}</span>
+                  <span className="font-display text-3xl font-bold text-brand tracking-tight">{String(i + 1).padStart(2, '0')}</span>
                   <div>
-                    <p className="font-display text-xl font-bold uppercase text-white">{s.title}</p>
+                    <p className="font-display text-xl font-bold text-white tracking-tight">{s.title}</p>
                     <p className="text-[15px]">{s.text}</p>
                   </div>
                 </motion.li>

@@ -7,7 +7,7 @@ export default function BrandBadges({ className = '' }) {
       {business.brands.map((b) => (
         <li
           key={b}
-          className="rounded-sm border border-line bg-graphite px-5 py-3 font-display text-xl font-bold uppercase tracking-wider text-white transition-colors hover:border-brand sm:text-2xl"
+          className="rounded-sm border border-line bg-graphite px-5 py-3 font-display text-lg font-bold tracking-tight text-white transition-colors hover:border-brand sm:text-2xl"
         >
           {b}
         </li>

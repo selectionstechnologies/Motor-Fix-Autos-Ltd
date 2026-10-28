@@ -16,7 +16,7 @@ export default function Contact() {
           <div className="space-y-8 lg:col-span-5">
             <ContactDetails />
             <div>
-              <h2 className="mb-3 font-display text-2xl font-bold uppercase">Opening hours</h2>
+              <h2 className="mb-3 font-display text-2xl font-bold tracking-tight">Opening hours</h2>
               <HoursTable compact />
             </div>
           </div>

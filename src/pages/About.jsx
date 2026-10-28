@@ -55,7 +55,7 @@ export default function About() {
                 </li>
               ))}
             </ul>
-            <h3 className="mt-10 font-display text-3xl font-bold uppercase">{team.title}</h3>
+            <h3 className="mt-10 font-display text-3xl font-bold tracking-tight">{team.title}</h3>
             <p className="mt-3 text-lg text-text-mute">{team.text}</p>
           </div>
           <div className="grid grid-cols-2 gap-4 lg:col-span-6">
@@ -74,7 +74,7 @@ export default function About() {
             {features.map(({ icon: Icon, title, text }, i) => (
               <motion.li key={title} {...reveal(i)} className="card p-6">
                 <Icon className="h-7 w-7 text-brand-ink" aria-hidden="true" />
-                <h3 className="mt-4 font-display text-h3 font-bold uppercase">{title}</h3>
+                <h3 className="mt-4 font-display text-h3 font-bold tracking-tight">{title}</h3>
                 <p className="mt-2 text-[15px] text-text-mute">{text}</p>
               </motion.li>
             ))}

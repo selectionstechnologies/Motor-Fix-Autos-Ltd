@@ -14,7 +14,7 @@ export default function TrustStrip() {
             className={`flex items-center gap-3 py-4 sm:py-6 ${i % 2 ? 'min-[400px]:pl-4 sm:pl-6' : 'min-[400px]:pr-4'} ${i > 0 ? 'border-t border-line-light min-[400px]:border-t-0 lg:border-l lg:pl-6' : ''} ${i > 1 ? 'min-[400px]:border-t lg:border-t-0' : ''}`}
           >
             <Icon className="h-6 w-6 shrink-0 text-brand-ink" aria-hidden="true" />
-            <span className="font-display text-base font-bold uppercase leading-tight tracking-wide text-text min-[360px]:text-lg sm:text-xl">{label}</span>
+            <span className="font-display text-base font-bold leading-tight text-text min-[360px]:text-lg sm:text-xl tracking-tight">{label}</span>
           </motion.li>
         ))}
       </ul>

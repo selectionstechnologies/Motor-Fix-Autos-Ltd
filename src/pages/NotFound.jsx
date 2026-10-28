@@ -10,7 +10,7 @@ export default function NotFound() {
       <section className="dark">
         <div className="container-x flex min-h-[60vh] flex-col items-start justify-center py-20">
           <p className="font-display text-8xl font-bold text-brand">404</p>
-          <h1 ref={ref} tabIndex={-1} className="mt-4 font-display text-h1 font-bold uppercase">Wrong turn</h1>
+          <h1 ref={ref} tabIndex={-1} className="mt-4 font-display text-h1 font-bold tracking-tight">Wrong turn</h1>
           <p className="mt-4 max-w-lg text-lg">This page has moved or never existed. Try one of these instead.</p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link to="/" className="btn-primary">Back to home</Link>

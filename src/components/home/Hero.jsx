@@ -30,7 +30,7 @@ export default function Hero() {
         <div className="max-w-3xl">
           <p {...rise(0)}><span className="eyebrow">Ardwick Green · <span className="whitespace-nowrap">Manchester M13</span></span></p>
 
-          <h1 ref={headingRef} tabIndex={-1} className="mt-6 font-display text-hero font-bold uppercase text-white">
+          <h1 ref={headingRef} tabIndex={-1} className="mt-6 font-display text-hero font-bold text-white tracking-tight">
             <span {...rise(1)} className="block animate-rise">Manchester’s</span>
             <span {...rise(2)} className="block animate-rise text-brand">German car</span>
             <span {...rise(3)} className="block animate-rise">specialists</span>

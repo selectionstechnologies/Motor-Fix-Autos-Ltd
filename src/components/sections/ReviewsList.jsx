@@ -22,7 +22,7 @@ export default function ReviewsList({ limit }) {
     return (
       <div className="card flex flex-col items-start gap-5 p-8 sm:flex-row sm:items-center sm:justify-between">
         <div>
-          <p className="font-display text-2xl font-bold uppercase text-text">See what customers say</p>
+          <p className="font-display text-2xl font-bold text-text tracking-tight">See what customers say</p>
           <p className="mt-1 text-text-mute">Our customer reviews are on our Google Business profile.</p>
         </div>
         <GoogleReviewsButton />

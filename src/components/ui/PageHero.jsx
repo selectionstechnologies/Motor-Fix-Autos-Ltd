@@ -35,7 +35,7 @@ export default function PageHero({ eyebrow, title, intro, crumbs = [], current, 
         <div className="mt-8 grid gap-10 lg:grid-cols-12 lg:items-end">
           <div className="animate-rise lg:col-span-8">
             {eyebrow && <p className="eyebrow mb-5">{eyebrow}</p>}
-            <h1 ref={headingRef} tabIndex={-1} className="font-display text-h1 font-bold uppercase">
+            <h1 ref={headingRef} tabIndex={-1} className="font-display text-h1 font-bold tracking-tight">
               {title}
             </h1>
             {intro && <p className="mt-5 max-w-2xl text-lg text-mute">{intro}</p>}

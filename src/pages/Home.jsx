@@ -59,7 +59,7 @@ export default function Home() {
             {features.map(({ icon: Icon, title, text }, i) => (
               <motion.li key={title} {...reveal(i)} className="border-t-2 border-ink pt-6">
                 <Icon className="h-7 w-7 text-brand-ink" aria-hidden="true" />
-                <h3 className="mt-4 font-display text-h3 font-bold uppercase">{title}</h3>
+                <h3 className="mt-4 font-display text-h3 font-bold tracking-tight">{title}</h3>
                 <p className="mt-2 text-[15px] text-text-mute">{text}</p>
               </motion.li>
             ))}
@@ -128,7 +128,7 @@ export default function Home() {
               <motion.li key={p.slug} {...reveal(i)}>
                 <Link to={`/blog/${p.slug}`} className="group grid gap-2 py-6 sm:grid-cols-12 sm:items-baseline sm:gap-6">
                   <span className="text-sm text-text-mute sm:col-span-3">{formatDate(p.date)} · {p.category}</span>
-                  <span className="font-display text-2xl font-bold uppercase text-text transition-colors group-hover:text-brand-ink sm:col-span-8">{p.title}</span>
+                  <span className="font-display text-2xl font-bold text-text transition-colors group-hover:text-brand-ink sm:col-span-8 tracking-tight">{p.title}</span>
                   <ArrowRight className="hidden h-5 w-5 justify-self-end text-brand-ink transition-transform group-hover:translate-x-1 sm:col-span-1 sm:block" aria-hidden="true" />
                 </Link>
               </motion.li>

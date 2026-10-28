@@ -33,14 +33,14 @@ export default {
         whatsapp: token('whatsapp'),
       },
       fontFamily: {
-        display: ['"Barlow Condensed"', '"Barlow Condensed Fallback"', '"Arial Narrow"', 'sans-serif'],
-        body: ['Inter', '"Inter Fallback"', 'system-ui', 'sans-serif'],
+        display: ['Sora', '"Sora Fallback"', 'system-ui', 'sans-serif'],
+        body: ['"DM Sans"', '"DM Sans Fallback"', 'system-ui', 'sans-serif'],
       },
       fontSize: {
-        hero: ['clamp(2rem, 4vw + 1.25rem, 5.5rem)', { lineHeight: '0.95', letterSpacing: '0.01em' }],
-        h1: ['clamp(1.875rem, 3.5vw + 1rem, 4rem)', { lineHeight: '1', letterSpacing: '0.01em' }],
-        h2: ['clamp(1.625rem, 2.5vw + 1rem, 2.875rem)', { lineHeight: '1.05', letterSpacing: '0.01em' }],
-        h3: ['clamp(1.25rem, 1.6vw, 1.5rem)', { lineHeight: '1.2' }],
+        hero: ['clamp(1.875rem, 3.6vw + 1.1rem, 4.5rem)', { lineHeight: '1.06', letterSpacing: '-0.03em' }],
+        h1: ['clamp(1.75rem, 2.6vw + 1rem, 3.25rem)', { lineHeight: '1.1', letterSpacing: '-0.025em' }],
+        h2: ['clamp(1.5rem, 1.8vw + 1rem, 2.5rem)', { lineHeight: '1.15', letterSpacing: '-0.02em' }],
+        h3: ['clamp(1.0625rem, 0.6vw + 0.9rem, 1.25rem)', { lineHeight: '1.3', letterSpacing: '-0.01em' }],
       },
       borderRadius: {
         sm: '4px',

@@ -12,7 +12,7 @@ export default function MotBand() {
             <CalendarClock className="h-6 w-6" aria-hidden="true" />
           </span>
           <div>
-            <h2 className="font-display text-3xl font-bold uppercase text-ink">MOT due soon?</h2>
+            <h2 className="font-display text-3xl font-bold text-ink tracking-tight">MOT due soon?</h2>
             <p className="mt-1 max-w-xl text-ink">
               Book up to a month (minus a day) early and keep your renewal date.{' '}
               <a href={motCheckLink} target="_blank" rel="noopener noreferrer" className="font-semibold underline underline-offset-4">

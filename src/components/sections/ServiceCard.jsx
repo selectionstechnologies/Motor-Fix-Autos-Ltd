@@ -17,7 +17,7 @@ export default function ServiceCard({ service, index = 0, headingLevel = 3 }) {
         <span className="flex h-11 w-11 items-center sm:h-12 sm:w-12 justify-center rounded-sm bg-ink text-brand transition-colors duration-300 group-hover:bg-brand group-hover:text-ink">
           <Icon className="h-6 w-6" aria-hidden="true" />
         </span>
-        <H className="mt-4 font-display sm:mt-6 text-h3 font-bold uppercase tracking-wide">{title}</H>
+        <H className="mt-4 font-display sm:mt-6 text-h3 font-bold tracking-tight">{title}</H>
         <p className="mt-2 flex-1 text-[15px] text-text-mute">{short}</p>
         <span className="mt-4 inline-flex sm:mt-5 items-center gap-1.5 text-sm font-semibold text-brand-ink">
           Find out more

@@ -93,7 +93,7 @@ export default function Navbar() {
                       to={l.to}
                       end={l.to === '/'}
                       className={({ isActive }) =>
-                        `block rounded-sm border-l-2 px-3 py-3 font-display text-xl font-bold uppercase tracking-wide transition-colors ${
+                        `block rounded-sm border-l-2 px-3 py-3 font-display text-lg font-semibold tracking-tight transition-colors ${
                           isActive ? 'border-brand bg-graphite text-white' : 'border-transparent text-mute hover:bg-graphite hover:text-white'
                         }`
                       }

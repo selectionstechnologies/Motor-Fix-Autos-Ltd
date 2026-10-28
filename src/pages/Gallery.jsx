@@ -27,7 +27,7 @@ export default function Gallery() {
                       Photo coming soon
                     </div>
                   )}
-                  <figcaption className="mt-3 font-display text-lg font-bold uppercase tracking-wide text-text">{g.caption}</figcaption>
+                  <figcaption className="mt-3 font-display text-lg font-bold text-text tracking-tight">{g.caption}</figcaption>
                 </figure>
               </motion.li>
             ))}

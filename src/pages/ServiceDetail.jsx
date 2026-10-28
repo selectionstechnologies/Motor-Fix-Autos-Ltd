@@ -68,8 +68,8 @@ export default function ServiceDetail() {
               <ol className="mt-6 grid gap-4 sm:grid-cols-2">
                 {s.whatWeDo.map((step, i) => (
                   <motion.li key={step.title} {...reveal(i % 2)} className="relative overflow-hidden rounded border border-line-light bg-white p-5">
-                    <span className="font-display text-sm font-bold uppercase tracking-widest text-brand-ink">Step {String(i + 1).padStart(2, '0')}</span>
-                    <p className="mt-1 font-display text-xl font-bold uppercase text-text">{step.title}</p>
+                    <span className="font-display text-sm font-bold text-brand-ink tracking-tight">Step {String(i + 1).padStart(2, '0')}</span>
+                    <p className="mt-1 font-display text-xl font-bold text-text tracking-tight">{step.title}</p>
                     <p className="mt-1 text-[15px] text-text-mute">{step.text}</p>
                   </motion.li>
                 ))}
@@ -85,7 +85,7 @@ export default function ServiceDetail() {
           <aside className="lg:col-span-4">
             <div className="space-y-6 lg:sticky lg:top-28">
               <div className="dark rounded border border-line p-6">
-                <h2 className="font-display text-3xl font-bold uppercase">{isBodywork ? 'Free estimate' : 'Call for a quote'}</h2>
+                <h2 className="font-display text-3xl font-bold tracking-tight">{isBodywork ? 'Free estimate' : 'Call for a quote'}</h2>
                 <p className="mt-2">Tell us your registration and what you need. We confirm the price before any work starts.</p>
                 <div className="mt-5 grid gap-3">
                   <Link to={`/book?service=${s.slug}`} className="btn-primary">
@@ -100,7 +100,7 @@ export default function ServiceDetail() {
               </div>
               {related.length > 0 && (
                 <nav aria-label={`More in ${group.title}`} className="card p-6">
-                  <h2 className="font-display text-xl font-bold uppercase">More in {group.title}</h2>
+                  <h2 className="font-display text-xl font-bold tracking-tight">More in {group.title}</h2>
                   <ul className="mt-3 divide-y divide-line-light">
                     {related.map((o) => (
                       <li key={o.slug}>
