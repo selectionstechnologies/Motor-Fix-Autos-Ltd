@@ -220,7 +220,7 @@ export default function ChatBot() {
         transition={{ delay: 1, duration: 0.4, ease: 'easeOut' }}
         className="fixed bottom-[5.25rem] right-4 z-50 md:bottom-7 md:right-7"
       >
-        <span className="flex h-14 w-14 items-center justify-center rounded-full border border-line bg-ink text-brand shadow-card transition hover:-translate-y-1 hover:shadow-glow">
+        <span className="flex h-12 w-12 items-center justify-center rounded-full border border-line bg-ink min-[360px]:h-14 min-[360px]:w-14 text-brand shadow-card transition hover:-translate-y-1 hover:shadow-glow">
           {open ? <X className="h-6 w-6" aria-hidden="true" /> : <MessageSquareText className="h-6 w-6" aria-hidden="true" />}
         </span>
       </motion.button>

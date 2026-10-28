@@ -37,9 +37,9 @@ export default {
         body: ['Inter', '"Inter Fallback"', 'system-ui', 'sans-serif'],
       },
       fontSize: {
-        hero: ['clamp(2.75rem, 6vw, 5.5rem)', { lineHeight: '0.95', letterSpacing: '0.01em' }],
-        h1: ['clamp(2.25rem, 4.5vw, 4rem)', { lineHeight: '1', letterSpacing: '0.01em' }],
-        h2: ['clamp(1.875rem, 3.2vw, 2.875rem)', { lineHeight: '1.05', letterSpacing: '0.01em' }],
+        hero: ['clamp(2rem, 4vw + 1.25rem, 5.5rem)', { lineHeight: '0.95', letterSpacing: '0.01em' }],
+        h1: ['clamp(1.875rem, 3.5vw + 1rem, 4rem)', { lineHeight: '1', letterSpacing: '0.01em' }],
+        h2: ['clamp(1.625rem, 2.5vw + 1rem, 2.875rem)', { lineHeight: '1.05', letterSpacing: '0.01em' }],
         h3: ['clamp(1.25rem, 1.6vw, 1.5rem)', { lineHeight: '1.2' }],
       },
       borderRadius: {

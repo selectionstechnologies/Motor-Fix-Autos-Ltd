@@ -20,9 +20,9 @@ export default function ContactDetails() {
           key={label}
           href={href}
           {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-          className="group card flex items-start gap-4 p-5 transition duration-300 hover:border-brand-dark hover:shadow-card"
+          className="group card flex items-start gap-3 p-4 transition sm:gap-4 sm:p-5 duration-300 hover:border-brand-dark hover:shadow-card"
         >
-          <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-sm bg-ink text-brand transition-colors duration-300 group-hover:bg-brand group-hover:text-ink">
+          <span className="flex h-10 w-10 shrink-0 items-center sm:h-11 sm:w-11 justify-center rounded-sm bg-ink text-brand transition-colors duration-300 group-hover:bg-brand group-hover:text-ink">
             <Icon className="h-5 w-5" aria-hidden="true" />
           </span>
           <span className="min-w-0">

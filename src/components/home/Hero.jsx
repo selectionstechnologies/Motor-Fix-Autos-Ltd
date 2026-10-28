@@ -28,7 +28,7 @@ export default function Hero() {
 
       <div className="container-x flex min-h-[36rem] items-center py-16 sm:min-h-[40rem] lg:min-h-[44rem] lg:py-24">
         <div className="max-w-3xl">
-          <p {...rise(0)}><span className="eyebrow">Ardwick Green · Manchester M13</span></p>
+          <p {...rise(0)}><span className="eyebrow">Ardwick Green · <span className="whitespace-nowrap">Manchester M13</span></span></p>
 
           <h1 ref={headingRef} tabIndex={-1} className="mt-6 font-display text-hero font-bold uppercase text-white">
             <span {...rise(1)} className="block animate-rise">Manchester’s</span>

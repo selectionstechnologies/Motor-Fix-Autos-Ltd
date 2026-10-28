@@ -137,7 +137,7 @@ export default function BookingForm() {
   }
 
   return (
-    <form noValidate onSubmit={onSubmit} aria-label="Booking request form" className="card grid gap-5 p-6 sm:grid-cols-2 sm:p-8">
+    <form noValidate onSubmit={onSubmit} aria-label="Booking request form" className="card grid gap-5 p-4 min-[360px]:p-6 sm:grid-cols-2 sm:p-8">
       <Field id="bk-name" label="Your name" error={show('name')}>
         <input id="bk-name" name="name" type="text" autoComplete="name" className="input"
           value={values.name} onChange={onChange} onBlur={onBlur} {...describe('name')} />

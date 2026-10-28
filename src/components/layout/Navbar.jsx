@@ -47,7 +47,7 @@ export default function Navbar() {
       <header className="sticky top-0 z-40 border-b border-line bg-ink/95 backdrop-blur">
         <nav className="container-x flex h-16 items-center justify-between gap-4 sm:h-[4.5rem]" aria-label="Main navigation">
           <Link to="/" className="text-white" aria-label={`${business.name}, home`}>
-            <Logo className="h-9 w-auto sm:h-10" title={business.name} />
+            <Logo className="h-8 w-auto min-[360px]:h-9 sm:h-10" title={business.name} />
           </Link>
 
           <ul className="hidden items-center gap-7 lg:flex">

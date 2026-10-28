@@ -56,6 +56,19 @@
   }
   h1, h2, h3, h4 {
     @apply font-display font-bold text-text;
+    overflow-wrap: break-word;
+  }
+  p, li, dd, td, th, a, span, label, blockquote {
+    overflow-wrap: break-word;
+  }
+  .grid > *, .flex > * {
+    min-width: 0;
+  }
+  .flex > svg {
+    flex-shrink: 0;
+  }
+  img, svg, video, iframe, picture {
+    max-width: 100%;
   }
   /* Double ring: green outside, ink inside, so focus is visible on light and dark sections */
   :focus-visible {
@@ -75,7 +88,7 @@
 
 @layer components {
   .container-x {
-    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+    @apply mx-auto w-full max-w-7xl px-3 min-[360px]:px-4 sm:px-6 lg:px-8;
   }
 
   /* Section eyebrow with the thin green "racing line" underneath */
@@ -99,7 +112,7 @@
   }
 
   .btn {
-    @apply inline-flex min-h-[48px] items-center text-center justify-center gap-2 rounded-sm px-6 py-3 text-[15px] font-semibold tracking-wide transition duration-200 ease-out;
+    @apply inline-flex min-h-[48px] max-w-full items-center text-center justify-center gap-2 rounded-sm px-6 py-3 text-[15px] font-semibold tracking-wide transition duration-200 ease-out;
   }
   /* Text on green is ink, never white: white on #22B24C is under 3:1 */
   .btn-primary {

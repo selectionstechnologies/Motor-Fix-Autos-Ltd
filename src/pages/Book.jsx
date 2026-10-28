@@ -15,7 +15,7 @@ export default function Book() {
         <div className="container-x grid gap-10 lg:grid-cols-12">
           <div className="lg:col-span-8"><BookingForm /></div>
           <aside className="space-y-6 lg:col-span-4">
-            <a href={business.phoneHref} className="dark group flex items-center gap-4 rounded border border-line p-6 transition hover:border-brand">
+            <a href={business.phoneHref} className="dark group flex items-center gap-4 rounded border border-line p-4 min-[360px]:p-6 transition hover:border-brand">
               <Phone className="h-7 w-7 shrink-0 text-brand" aria-hidden="true" />
               <span>
                 <span className="block text-sm">Prefer to call?</span>
